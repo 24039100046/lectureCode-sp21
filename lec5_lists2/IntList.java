@@ -1,4 +1,4 @@
-package lists2;
+package lec5_lists2;
 
 public class IntList {
 	public int first;
@@ -36,11 +36,44 @@ public class IntList {
 		return rest.get(i - 1);
 	}
 
-	public static void main(String[] args) {
-		IntList L = new IntList(15, null);
-		L = new IntList(10, L);
-		L = new IntList(5, L);
-
-		System.out.println(L.get(100));
+	public void addAdjacent() {
+		if (rest == null) {
+			return;
+		}
+		if (first == rest.first) {
+			first *= 2;
+			rest = rest.rest;
+			addAdjacent();
+		}
+		rest.addAdjacent();
 	}
-} 
+
+	public void addSquare(int i) {
+		if (rest != null) {
+			rest = new IntList(first * first, rest);
+			rest.rest.addSquare(i);
+		} else {
+			IntList L = new IntList(i, null);
+			rest = new IntList(first * first, L);
+		}
+	}
+
+	public static void main(String[] args) {
+		// IntList L = new IntList(15, null);
+		// L = new IntList(10, L);
+		// L = new IntList(5, L);
+
+		// System.out.println(L.get(100));
+
+		// IntList L1 = new IntList(3, null);
+		// L1 = new IntList(2, L1);
+		// L1 = new IntList(1, L1);
+		// L1 = new IntList(1, L1);
+		// L1.addAdjacent();
+
+		IntList L2 = new IntList(2, null);
+		L2 = new IntList(1, L2);
+		L2.addSquare(5);
+		L2.addSquare(7);
+	}
+}
