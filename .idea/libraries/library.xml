@@ -3,8 +3,11 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/library/hamcrest-core-1.3.jar!/" />
       <root url="jar://$PROJECT_DIR$/library/junit-4.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../skeleton-sp21/library-sp21/javalib/CS61B/jh61b.jar/1.0/jh61b.jar-1.0.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../skeleton-sp21/library-sp21/javalib/CS61B/jh61b.jar/1.0/jh61b.jar-1.0.jar!/" />
+    </SOURCES>
   </library>
 </component>
